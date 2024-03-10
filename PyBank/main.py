@@ -1,19 +1,18 @@
 import os
 import csv
 
-file = "../Resources/budget_data.csv"
+file = r"C:\Users\KANO\Desktop\Bootcamp files\weekly challenge 3\python-challange\PyBank\Resources\budget_data.csv"
 
 months = []
 
 with open(file) as csv_file:
-    csv_reader = csv.reader(csv_file, delimeter = ',')
+    csv_reader = csv.reader(csv_file, delimiter = ",")
 
     csv_header = next(csv_file)
-    print(f"Header: {csv_header}")
 
     for row in csv_reader:
         months.append(row[0])
 
-print(len(months))
+print("Total Months: " + str(len(months)))
 
 
