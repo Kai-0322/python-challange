@@ -34,8 +34,24 @@ with open(file) as csv_file:
     greatest_increase_month = monthly_change.index(max(monthly_change)) + 1
     greatest_decrease_month = monthly_change.index(min(monthly_change)) + 1
 
+print("Financial Analysis")
+print("------------------")
 print("Total Months: " + str(len(months)))
 print("Total: $" + str(total))
 print("Average Change: $" + str(average))
 print("Greatest Increase in Profits: " + str(months[greatest_increase_month]) + ' $' + str(greatest_increase))
 print("Greatest Decrease in Profits: " + str(months[greatest_decrease_month]) + ' $' + str(greatest_decrease))
+
+# Set variable for output file
+output_file = os.path.join("financial_analysis.txt")
+
+#  Open the output file
+with open(output_file, "w", newline='') as datafile:
+
+    datafile.write("Financial Analysis" + "\n")
+    datafile.write("------------------" + "\n")
+    datafile.write("Total Months: " + str(len(months)) + "\n")
+    datafile.write("Total: $" + str(total) + "\n")
+    datafile.write("Average Change: $" + str(average) + "\n")
+    datafile.write("Greatest Increase in Profits: " + str(months[greatest_increase_month]) + ' $' + str(greatest_increase) + "\n")
+    datafile.write("Greatest Decrease in Profits: " + str(months[greatest_decrease_month]) + ' $' + str(greatest_decrease))
