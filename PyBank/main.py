@@ -43,7 +43,7 @@ print("Greatest Increase in Profits: " + str(months[greatest_increase_month]) + 
 print("Greatest Decrease in Profits: " + str(months[greatest_decrease_month]) + ' $' + str(greatest_decrease))
 
 # Set variable for output file
-output_file = os.path.join("financial_analysis.txt")
+output_file = os.path.join("python-challange","PyBank", "analysis", "financial_analysis.txt")
 
 #  Open the output file
 with open(output_file, "w", newline='') as datafile:
