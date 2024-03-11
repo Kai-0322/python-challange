@@ -5,7 +5,7 @@ file = r"C:\Users\KANO\Desktop\Bootcamp files\weekly challenge 3\python-challang
 
 # Create empty arrays to hold values
 months = []
-net_total = []
+data = []
 monthly_change = []
 
 # Open and read csv
@@ -18,14 +18,14 @@ with open(file) as csv_file:
     # Read through each row of data after the header then transfer them to arrays
     for row in csv_reader:
         months.append(row[0])
-        net_total.append(int(row[1]))
+        data.append(int(row[1]))
 
     # Calculate monthly change then add to array
-    for i in range(len(net_total) - 1):
-        monthly_change.append(net_total[i + 1] - net_total[i])
+    for i in range(len(data) - 1):
+        monthly_change.append(data[i + 1] - data[i])
 
     # Calculate total, average, min and max
-    total = sum(net_total)
+    total = sum(data)
     average = sum(monthly_change) / len(monthly_change)
     greatest_increase = max(monthly_change)
     greatest_decrease = min(monthly_change)
